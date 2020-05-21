@@ -9,10 +9,11 @@ But why bother making one?
 
 # Why?
 
- - Because all major folder recursive copy package are unable to handle big file (greater than 0x1fffffe8 characters). Better Copy will copy anything regardless it size!
+ - Because all major folder recursive copy package (such as fs-extra) are unable to handle big file (greater than 0x1fffffe8 characters). Better Copy will copy anything regardless it size!
  - Another file copier will hit your RAM harder the larger the file you copy.
  - More customize event on the process of copying, such as onBeforeCopy, or onAfterCopy, etc
  - Options to switch into the OS' native file copy command
+ - We need a zero dependency package to handle file copying.
  - Because I'm bored!
 
 # Usage
