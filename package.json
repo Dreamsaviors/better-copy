@@ -1,6 +1,6 @@
 {
   "name": "better-copy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Huge files & directory copier",
   "main": "./lib/index.js",
   "scripts": {

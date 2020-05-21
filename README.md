@@ -26,7 +26,25 @@ bCopy('/path/to/your/moreThan2TBFiles.ext', '/path/to/destination/file.ext')
 	console.log(result)
 })
 ```
-Resolved result are an object containing pairs of source & destination path :
+
+```javascript
+const bCopy = require('better-copy');
+
+//use callback instead of the default promise
+bCopy('/path/to/your/moreThan2TBFiles.ext', '/path/to/destination/file.ext', 
+(result) => {
+	console.log(result)
+})
+
+
+//...is equal with :
+bCopy('/path/to/your/moreThan2TBFiles.ext', '/path/to/destination/file.ext')
+.then((result) => {
+	console.log(result)
+})
+```
+
+Resolved result is an iterable object containing pairs of source & destination path :
 
     {
 	    "/source/path/1" : [
