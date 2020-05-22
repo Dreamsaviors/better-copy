@@ -1,3 +1,4 @@
+
 # Better file copier
 
 Self proclaimed better file copier then the rest.
@@ -10,7 +11,7 @@ But why bother making one?
 # Why?
 
  - Because some major folder recursive copy package are unable to handle big file (greater than 0x1fffffe8 characters). Better Copy will copy anything regardless it size!
- - Another file copier will hit your RAM harder the larger the file you copy.
+ - Another file copier may hit your RAM harder the larger the file you copy. Better file copier will ensure that won't happen!
  - More customize event on the process of copying, such as onBeforeCopy, or onAfterCopy, etc
  - Options to switch into the OS' native file copy command
  - We need a zero dependency package to handle file copying.
@@ -23,9 +24,6 @@ const bCopy = require('better-copy');
 
 //bCopy(from, to, options, callback)
 bCopy('/path/to/your/moreThan2TBFiles.ext', '/path/to/destination/file.ext')
-.then((result) => {
-	console.log(result)
-})
 ```
 
 ```javascript
@@ -75,8 +73,8 @@ const bCopy = require('better-copy');
 // use an array as parameter for more than one input path
 bCopy(['/path/to/your/folder1', '/path/to/some/file.txt'], '/path/to/destination/folder');
 
-// Copy some file into multiple directory
-bCopy(['/path/to/your/folder'], 
+// Copy some file from multiple source into multiple directory
+bCopy(['/path/to/your/folder1', '/path/to/some/file.txt'], 
 	[
 		'/path/to/destination/folder', 
 		'/path/to/other/folder'
@@ -84,7 +82,7 @@ bCopy(['/path/to/your/folder'],
 ```
 
 # Options
-
+**Default options**
 ```javascript
 // The default value of the options parameter
 bCopy('/path/to/your/folder1', '/path/to/destination/folder', 
@@ -101,7 +99,7 @@ bCopy('/path/to/your/folder1', '/path/to/destination/folder',
 				
 	});
 ```
-Filtering example
+**Filtering example**
 ```javascript
 // Copy only the zip file
 var path = require('path');
@@ -119,6 +117,18 @@ copy('F:/source/', ['F:/destination/'], {
 	console.log("Copied files :", result)
 })
 ```
+
+**Example : onAfterCopy**
+```javascript
+// delete source file after successfull copy (aka: move)
+bCopy('/path/to/your/folder1', '/path/to/destination/folder', 
+	{
+		onAfterCopy : function(from, to) {
+			fs.unlink(from);
+		},
+	});
+```
+
 # License
 
 MIT License
