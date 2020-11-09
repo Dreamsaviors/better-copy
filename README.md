@@ -14,7 +14,6 @@ But why bother making one?
  - Another file copier may hit your RAM harder the larger the file you copy. Better file copier will ensure that won't happen!
  - More customize event on the process of copying, such as onBeforeCopy, or onAfterCopy, etc
  - Options to switch into the OS' native file copy command
- - We need a zero dependency package to handle file copying.
  - Because I'm bored!
 
 # Usage

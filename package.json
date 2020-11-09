@@ -1,6 +1,6 @@
 {
   "name": "better-copy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Huge files & directory copier",
   "main": "./lib/index.js",
   "scripts": {
@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/Dreamsaviors/better-copy/issues"
   },
-  "homepage": "https://github.com/Dreamsaviors/better-copy#readme"
+  "homepage": "https://github.com/Dreamsaviors/better-copy#readme",
+  "dependencies": {
+	  "graceful-fs": "^4.0.0"
+	}
 }
